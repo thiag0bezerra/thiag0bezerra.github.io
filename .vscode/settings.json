@@ -1,0 +1,141 @@
+{
+  // --- Typescript ---
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.biome": "always",
+      "source.organizeImports.biome": "always"
+    }
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.biome": "always",
+      "source.organizeImports.biome": "always"
+    }
+  },
+  // --- TS: usar a versão do projeto e agilizar import updates ---
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.suggest.autoImports": true,
+  // adicionar imports automaticamente ao colar
+  "editor.pasteAs.preferences": [
+    "text.updateImports.jsts"
+  ],
+  // Preferências de geração de código
+  "typescript.preferences.importModuleSpecifier": "shortest",
+  "typescript.preferences.quoteStyle": "double",
+  // Inlay Hints úteis (sem poluir)
+  "typescript.inlayHints.parameterNames.enabled": "literals",
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  // CodeLens (referências/implementações) - ótimo p/ navegação
+  "typescript.referencesCodeLens.enabled": true,
+  "typescript.implementationsCodeLens.enabled": true,
+  // --- Explorer / busca / watchers ---
+  "files.exclude": {
+    "**/.next": true,
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/out": true,
+    "**/coverage": true,
+    "**/.turbo": true,
+    "**/__pycache__": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/.next/**": true,
+    "**/dist/**": true,
+    "**/build/**": true,
+    "**/out/**": true,
+    "**/coverage/**": true,
+    "**/.turbo/**": true
+  },
+  // --- Arquivos / EOL / whitespace ---
+  "files.encoding": "utf8",
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  // --- Editor: produtividade sem surpresas ---
+  "editor.acceptSuggestionOnEnter": "smart",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.hover.enabled": true,
+  "editor.snippetSuggestions": "top",
+  "editor.suggestSelection": "first",
+  "editor.formatOnPaste": false,
+  // --- Explorer UI ---
+  "explorer.compactFolders": false,
+  "workbench.tree.indent": 12,
+  // --- Biome (VS Code extension) ---
+  "biome.enabled": true,
+  // Se estiver usando Biome v2 e um caminho custom:
+  "biome.configurationPath": "biome.json",
+  "biome.suggestInstallingGlobally": true,
+  // Ativar somente quando houver biome.json no workspace
+  "biome.requireConfiguration": true,
+  // Configurações do chat
+  "chat.agent.enabled": true,
+  "chat.agent.maxRequests": 100000,
+  "chat.agent.thinkingStyle": "expanded",
+  "chat.checkpoints.enabled": true,
+  "chat.checkpoints.showFileChanges": true,
+  "chat.commandCenter.enabled": true,
+  "chat.extensionTools.enabled": true,
+  "chat.instructionsFilesLocations": {
+    ".vscode/copilot/instructions": true
+  },
+  "chat.math.enabled": true,
+  "chat.mcp.access": "all",
+  "chat.mcp.autostart": "newAndOutdated",
+  "chat.mcp.discovery.enabled": {
+    "claude-desktop": true,
+    "windsurf": true,
+    "cursor-global": true,
+    "cursor-workspace": true
+  },
+  "chat.promptFilesLocations": {
+    ".vscode/copilot/prompts": true
+  },
+  "chat.sendElementsToChat.enabled": true,
+  "chat.todoListTool.enabled": true,
+  "chat.tools.terminal.enableAutoApprove": true,
+  "chat.useFileStorage": true,
+  "github.copilot.advanced": {
+    "useLanguageServer": true
+  },
+  "github.copilot.chat.agent.autoFix": true,
+  "github.copilot.chat.agent.thinkingTool": true,
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+  "github.copilot.chat.codesearch.enabled": true,
+  "github.copilot.chat.reviewSelection.enabled": true,
+  "github.copilot.chat.summarizeAgentConversationHistory.enabled": true,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.nextEditSuggestions.fixes": true,
+  "terminal.integrated.shellIntegration.enabled": true,
+  "terminal.integrated.shellIntegration.environmentReporting": true,
+  "terminal.integrated.shellIntegration.history": 100,
+  "terminal.integrated.shellIntegration.showCommandGuide": true,
+  "terminal.integrated.shellIntegration.decorationsEnabled": "both",
+  "chat.tools.terminal.autoApprove": {
+    "cd": true,
+    "pnpm": true,
+    "rm": true,
+    "mv": true,
+    "mkdir": true,
+    "rmdir": true,
+    "touch": true,
+    "npx": true,
+    "pnpx": true
+  },
+  "chat.tools.edits.autoApprove": {
+    "**/*": true,
+    "**/.git/**": false
+  }
+}

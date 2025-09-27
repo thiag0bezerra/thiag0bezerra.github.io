@@ -1,0 +1,97 @@
+# GFM + shadcn: mapeamento 1:1
+
+Este documento exercita, usando apenas GitHub Flavored Markdown (GFM), todos os elementos mapeados em `mdx-components.tsx`. Onde faz sentido, o render usa componentes shadcn/ui equivalentes (blockquote → Alert, hr → Separator, tables → Table, task lists → Checkbox).
+
+## Títulos
+
+### Níveis
+
+#### de
+
+##### Heading
+
+###### H6
+
+Parágrafos têm tipografia consistente. Suporte a ênfase: **negrito**, _itálico_ e ~~riscado~~ com `código inline`. Links: [página Sobre](/about) e externos como [Next.js](https://nextjs.org). Autolink literal também funciona: https://github.com
+
+---
+
+## Citação (blockquote)
+
+> As citações em Markdown são renderizadas via shadcn Alert.
+>
+> Múltiplas linhas também funcionam.
+
+---
+
+## Listas
+
+- Item não ordenado
+- Com múltiplas linhas
+  - E um nível aninhado
+
+1. Item numerado
+2. Outro item
+3. Com um pouco de `código` inline
+
+### Task list (GFM)
+
+- [x] Tarefa concluída
+- [ ] Tarefa pendente
+  - [x] Subtarefa marcada
+  - [ ] Subtarefa pendente
+
+---
+
+## Código (fenced)
+
+```ts
+export function hello(name: string) {
+  return `Olá, ${name}!`
+}
+```
+
+---
+
+## Imagem (Markdown)
+
+![Logo da Vercel](/vercel.svg)
+
+Legenda opcional pode ser feita como parágrafo imediatamente abaixo.
+
+---
+
+## Tabelas (GFM)
+
+| Componente | Mapeado para | Observação                  |
+|------------|--------------|-----------------------------|
+| hr         | Separator    | via elemento `---`          |
+| blockquote | Alert        | com AlertDescription interno |
+| table      | Table*       | header, body, row, head, cell |
+| task-list  | Checkbox     | checkboxes somente leitura   |
+
+> * O Markdown de tabela é mapeado para os primitvos shadcn de tabela.
+
+---
+
+## Rodapé com notas (GFM footnotes)
+
+Uma frase com nota de rodapé.[^nota]
+
+[^nota]: Esta é uma nota de rodapé em GFM, suportada por `remark-gfm`.
+
+---
+
+# Referência rápida
+
+## h2
+
+### h3
+
+#### h4
+
+##### h5
+
+###### h6
+
+Fim do tour: todos os elementos GFM suportados por `mdx-components.tsx` foram exercitados usando apenas Markdown.

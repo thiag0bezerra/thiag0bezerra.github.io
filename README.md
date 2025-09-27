@@ -1,30 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) and configured with **MDX** support.
 
-## Getting Started
+## 🚀 Features
 
-First, run the development server:
+- ⚡ Next.js 15 with Turbopack
+- 📝 MDX support for markdown with JSX components
+- 🎨 Tailwind CSS for styling
+- 🌙 Dark mode support
+- 📱 Responsive design
+
+## 📝 MDX Configuration
+
+This project is fully configured to use MDX (Markdown + JSX). You can create `.mdx` files and use them as:
+
+1. **Direct pages** - Place `.mdx` files in the `app` directory
+2. **Imported content** - Import `.mdx` files into React components
+
+### Example pages:
+- `/mdx-exemplo` - Direct MDX page example
+- `/about` - React page importing MDX content
+
+## 🛠️ Getting Started
+
+First, install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
+```
+
+Then, run the development server:
+
+```bash
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── mdx-exemplo/
+│   │   └── page.mdx          # Direct MDX page
+│   ├── about/
+│   │   └── page.tsx          # React page importing MDX
+│   └── page.tsx              # Home page
+├── content/
+│   └── about.mdx             # MDX content file
+└── mdx-components.tsx        # Global MDX components
+```
+
+## ✨ MDX Features
+
+- **Custom styled components** for headings, paragraphs, lists, etc.
+- **Image optimization** with Next.js Image component
+- **Syntax highlighting** for code blocks
+- **Tailwind CSS** integration for consistent styling
+
+## 🎨 Customizing MDX Components
+
+Edit `mdx-components.tsx` to customize how MDX elements are rendered globally. You can:
+
+- Style HTML elements (h1, h2, p, ul, etc.)
+- Add custom React components
+- Configure image handling
+- Set up syntax highlighting
 
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [MDX Documentation](https://mdxjs.com/) - learn about MDX syntax and features.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!

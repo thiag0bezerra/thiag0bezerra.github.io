@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -24,6 +25,28 @@ export default function Home() {
             Save and see your changes instantly.
           </li>
         </ol>
+
+        {/* Seção MDX Examples */}
+        <div className="flex flex-col gap-4 items-center">
+          <h2 className="text-2xl font-bold">MDX Configurado! 🎉</h2>
+          <p className="text-center text-gray-600 dark:text-gray-400">
+            Teste as páginas MDX que foram criadas:
+          </p>
+          <div className="flex gap-4 flex-wrap justify-center">
+            <Link
+              href="/mdx-exemplo"
+              className="rounded-lg border border-solid border-blue-500 bg-blue-50 dark:bg-blue-950 hover:bg-blue-100 dark:hover:bg-blue-900 transition-colors px-4 py-2 text-blue-700 dark:text-blue-300 font-medium"
+            >
+              📄 Exemplo MDX
+            </Link>
+            <Link
+              href="/about"
+              className="rounded-lg border border-solid border-green-500 bg-green-50 dark:bg-green-950 hover:bg-green-100 dark:hover:bg-green-900 transition-colors px-4 py-2 text-green-700 dark:text-green-300 font-medium"
+            >
+              👤 Sobre Mim
+            </Link>
+          </div>
+        </div>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
