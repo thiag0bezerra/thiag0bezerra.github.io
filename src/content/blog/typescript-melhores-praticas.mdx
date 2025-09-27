@@ -1,0 +1,229 @@
+---
+title: "TypeScript: Melhores Práticas para 2024"
+description: "Um guia completo sobre as melhores práticas de TypeScript, incluindo tipos avançados e patterns de desenvolvimento modernos."
+publishedAt: "2024-01-10"
+readTime: "12 min"
+tags: ["TypeScript", "JavaScript", "Types", "Best Practices"]
+showMetadata: true
+headless: false
+---
+
+# TypeScript: Melhores Práticas para 2024
+
+TypeScript continua evoluindo e se tornando cada vez mais essencial no desenvolvimento web moderno. Neste guia, vamos explorar as melhores práticas para 2024.
+
+## Por que TypeScript?
+
+TypeScript oferece:
+- **Type Safety**: Prevenção de erros em tempo de compilação
+- **Melhor IntelliSense**: Autocompletar mais preciso
+- **Refatoração segura**: Mudanças com confiança
+- **Documentação viva**: Tipos como documentação
+
+## Práticas Fundamentais
+
+### 1. Use `strict` Mode
+
+```json
+{
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true
+  }
+}
+```
+
+### 2. Prefira Interfaces para Objetos
+
+```typescript
+// ✅ Bom
+interface User {
+  id: string;
+  name: string;
+  email: string;
+}
+
+// ❌ Evite para objetos simples
+type User = {
+  id: string;
+  name: string;
+  email: string;
+}
+```
+
+### 3. Utilize Union Types
+
+```typescript
+type Status = 'loading' | 'success' | 'error';
+type Theme = 'light' | 'dark' | 'auto';
+
+function handleStatus(status: Status) {
+  switch (status) {
+    case 'loading':
+      return 'Carregando...';
+    case 'success':
+      return 'Sucesso!';
+    case 'error':
+      return 'Erro ocorreu';
+  }
+}
+```
+
+## Tipos Avançados
+
+### Generic Constraints
+
+```typescript
+interface Lengthwise {
+  length: number;
+}
+
+function loggingIdentity<T extends Lengthwise>(arg: T): T {
+  console.log(arg.length);
+  return arg;
+}
+```
+
+### Utility Types
+
+```typescript
+interface Todo {
+  title: string;
+  description: string;
+  completed: boolean;
+}
+
+// Partial - todos os campos opcionais
+type TodoUpdate = Partial<Todo>;
+
+// Pick - selecionar campos específicos
+type TodoPreview = Pick<Todo, 'title' | 'completed'>;
+
+// Omit - omitir campos específicos
+type TodoCreate = Omit<Todo, 'completed'>;
+```
+
+## Padrões Modernos
+
+### 1. Branded Types
+
+```typescript
+type UserId = string & { __brand: 'UserId' };
+type PostId = string & { __brand: 'PostId' };
+
+function createUserId(id: string): UserId {
+  return id as UserId;
+}
+
+function getUser(id: UserId) {
+  // Implementação
+}
+
+// Evita confusão entre diferentes IDs
+const userId = createUserId('123');
+const postId = '456' as PostId; // Error!
+```
+
+### 2. Discriminated Unions
+
+```typescript
+type LoadingState = {
+  status: 'loading';
+};
+
+type SuccessState = {
+  status: 'success';
+  data: any;
+};
+
+type ErrorState = {
+  status: 'error';
+  error: string;
+};
+
+type State = LoadingState | SuccessState | ErrorState;
+
+function handleState(state: State) {
+  switch (state.status) {
+    case 'loading':
+      // TypeScript sabe que é LoadingState
+      break;
+    case 'success':
+      // TypeScript sabe que tem 'data'
+      console.log(state.data);
+      break;
+    case 'error':
+      // TypeScript sabe que tem 'error'
+      console.error(state.error);
+      break;
+  }
+}
+```
+
+## Dicas de Performance
+
+### 1. Use `const assertions`
+
+```typescript
+// ❌ Inferência ampla
+const colors = ['red', 'green', 'blue'];
+
+// ✅ Inferência precisa
+const colors = ['red', 'green', 'blue'] as const;
+type Color = typeof colors[number]; // 'red' | 'green' | 'blue'
+```
+
+### 2. Lazy Loading de Types
+
+```typescript
+// Para types grandes, use imports de tipo
+import type { LargeComplexType } from './large-module';
+
+function processData(data: LargeComplexType) {
+  // Implementação
+}
+```
+
+## Ferramentas Recomendadas
+
+- **ESLint + @typescript-eslint**: Linting avançado
+- **Prettier**: Formatação consistente
+- **ts-node**: Execução direta de TypeScript
+- **tsc --watch**: Compilação em watch mode
+
+## Configuração Recomendada
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}
+```
+
+## Conclusão
+
+TypeScript em 2024 oferece ferramentas poderosas para criar código mais robusto e maintível. Seguindo essas práticas, você estará preparado para aproveitar ao máximo a linguagem.
+
+### Recursos Adicionais
+
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/)
+- [TypeScript Playground](https://www.typescriptlang.org/play)
+- [Effective TypeScript](https://effectivetypescript.com/)
+
+*Que prática você pretende implementar primeiro? Compartilhe nos comentários!*

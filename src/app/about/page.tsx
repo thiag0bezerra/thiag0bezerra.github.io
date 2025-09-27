@@ -8,13 +8,7 @@ import {
 } from "@/components/layout-specific/hero-section";
 import { Section } from "@/components/layout-specific/section";
 import { Badge } from "@/components/ui/badge";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import {
   Timeline,
@@ -279,7 +273,9 @@ export default function AboutPage() {
         <Container size="md">
           <div className="space-y-8">
             <div className="text-center">
-              <h2 className="text-3xl font-bold mb-4">Minha Evolução Técnica</h2>
+              <h2 className="text-3xl font-bold mb-4">
+                Minha Evolução Técnica
+              </h2>
               <p className="text-muted-foreground">
                 Uma linha do tempo das principais tecnologias e marcos da minha
                 carreira
@@ -298,7 +294,9 @@ export default function AboutPage() {
                     <TimelineDate className="group-data-[orientation=vertical]/timeline:sm:absolute group-data-[orientation=vertical]/timeline:sm:-left-32 group-data-[orientation=vertical]/timeline:sm:w-20 group-data-[orientation=vertical]/timeline:sm:text-right">
                       {item.date}
                     </TimelineDate>
-                    <TimelineTitle className="sm:-mt-0.5">{item.title}</TimelineTitle>
+                    <TimelineTitle className="sm:-mt-0.5">
+                      {item.title}
+                    </TimelineTitle>
                     <TimelineIndicator />
                   </TimelineHeader>
                   <TimelineContent>

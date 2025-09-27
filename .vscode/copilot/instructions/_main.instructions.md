@@ -11,6 +11,8 @@ Stack
 - Use a tool #shadcn para requisitar, consultar, configurar e personalizar componentes da UI.
 - Use a tool #todos para gerenciar tarefas e lembretes.
 - Use a tool #think para raciocinar sobre problemas complexos e gerar soluções.
+- Os arquivos .mdx usam o Github Flavored Markdown (GFM).
+
 
 Principles
 - Production quality: simples > complexo, explícito > implícito.
