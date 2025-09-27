@@ -21,9 +21,7 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.suggest.autoImports": true,
   // adicionar imports automaticamente ao colar
-  "editor.pasteAs.preferences": [
-    "text.updateImports.jsts"
-  ],
+  "editor.pasteAs.preferences": ["text.updateImports.jsts"],
   // Preferências de geração de código
   "typescript.preferences.importModuleSpecifier": "shortest",
   "typescript.preferences.quoteStyle": "double",
