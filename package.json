@@ -2,12 +2,14 @@
   "name": "aboutme-nextjs",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "biome format --write && biome check --write && tsc --noEmit && next build",
     "start": "next start",
     "format": "biome format --write",
-    "fix": "biome check --write"
+    "fix": "biome check --write",
+    "prepare": "husky"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
@@ -36,6 +38,9 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.0",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "husky": "^9.1.6",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

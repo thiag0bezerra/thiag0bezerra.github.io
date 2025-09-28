@@ -155,8 +155,8 @@ export function HeroBadges({
 
   return (
     <div className={cn("flex flex-wrap gap-2", className)} {...props}>
-      {badges.map((badge, index) => (
-        <Badge key={index} variant={variant}>
+      {badges.map((badge) => (
+        <Badge key={badge} variant={variant}>
           {badge}
         </Badge>
       ))}

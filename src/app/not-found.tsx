@@ -147,8 +147,8 @@ export default function NotFound() {
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
-                  {helpfulTips.map((tip, index) => (
-                    <li key={index} className="flex items-start gap-3">
+                  {helpfulTips.map((tip) => (
+                    <li key={tip} className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-sm text-muted-foreground">
                         {tip}
