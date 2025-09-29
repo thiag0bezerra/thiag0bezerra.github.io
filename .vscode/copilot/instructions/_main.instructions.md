@@ -21,5 +21,3 @@ Principles
 - Comments only when logic is not obvious.
 - Consistent and accessible UI. Use auto layout and consistent spacing. Prefer a responsive and mobile-first approach.
 - Prefer lean and objective page.tsx pages: seek to reuse components from src/components/**/*.tsx rather than manually implementing all elements on the page.
-
-- For "brand icons" (e.g., GitHub, LinkedIn), instead of using lucide-react, use those provided by simple-icons.
