@@ -1,5 +1,5 @@
-import { ArrowRight, FileText } from "lucide-react";
 import Link from "next/link";
+import { ArrowRightIcon, FileTextIcon } from "@/components/icons";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -103,7 +103,7 @@ export default function BlogPage() {
                             <span className="text-sm font-medium mr-2">
                               Ler artigo
                             </span>
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                           </div>
                         </div>
                       </div>
@@ -133,7 +133,7 @@ export default function BlogPage() {
                           {formatDate(post.date)}
                         </Badge>
                         <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                          <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform" />
+                          <ArrowRightIcon className="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform" />
                         </div>
                       </div>
                       <CardTitle className="text-xl leading-tight group-hover:text-primary transition-colors">
@@ -162,7 +162,7 @@ export default function BlogPage() {
             {sortedPosts.length === 0 && (
               <div className="text-center py-20">
                 <div className="w-24 h-24 bg-muted rounded-full flex items-center justify-center mx-auto mb-6">
-                  <FileText
+                  <FileTextIcon
                     className="w-12 h-12 text-muted-foreground"
                     aria-label="Nenhum post disponível"
                   />

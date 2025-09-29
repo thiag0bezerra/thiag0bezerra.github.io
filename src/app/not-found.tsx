@@ -1,12 +1,12 @@
-import {
-  AlertTriangle,
-  BookOpen,
-  Home,
-  Mail,
-  Search,
-  User,
-} from "lucide-react";
 import Link from "next/link";
+import {
+  AlertTriangleIcon,
+  BookOpenIcon,
+  HomeIcon,
+  MailIcon,
+  SearchIcon,
+  UserIcon,
+} from "@/components/icons";
 import { Container } from "@/components/layout-specific/container";
 import {
   HeroActions,
@@ -29,19 +29,19 @@ const quickLinks = [
   {
     href: "/",
     label: "Página Inicial",
-    icon: Home,
+    icon: HomeIcon,
     description: "Volte para a página principal e conheça meu trabalho",
   },
   {
     href: "/blog",
     label: "Blog",
-    icon: BookOpen,
+    icon: BookOpenIcon,
     description: "Explore artigos sobre desenvolvimento e tecnologia",
   },
   {
     href: "/about",
     label: "Sobre Mim",
-    icon: User,
+    icon: UserIcon,
     description: "Conheça mais sobre minha experiência e trajetória",
   },
 ];
@@ -61,7 +61,7 @@ export default function NotFound() {
         <HeroContent>
           <div className="mb-8">
             <div className="w-24 h-24 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <AlertTriangle className="w-12 h-12 text-primary" />
+              <AlertTriangleIcon className="w-12 h-12 text-primary" />
             </div>
             <div className="text-6xl md:text-8xl font-bold text-muted-foreground mb-4">
               404
@@ -83,13 +83,13 @@ export default function NotFound() {
           <HeroActions>
             <Button asChild size="lg">
               <Link href="/">
-                <Home className="w-4 h-4 mr-2" />
+                <HomeIcon className="w-4 h-4 mr-2" />
                 Voltar ao Início
               </Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
               <Link href="/blog">
-                <BookOpen className="w-4 h-4 mr-2" />
+                <BookOpenIcon className="w-4 h-4 mr-2" />
                 Explorar Blog
               </Link>
             </Button>
@@ -138,7 +138,7 @@ export default function NotFound() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Search className="w-5 h-5" />
+                  <SearchIcon className="w-5 h-5" />
                   Dicas para Encontrar o que Procura
                 </CardTitle>
                 <CardDescription>
@@ -162,7 +162,7 @@ export default function NotFound() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Mail className="w-5 h-5" />
+                  <MailIcon className="w-5 h-5" />
                   Precisa de Ajuda?
                 </CardTitle>
                 <CardDescription>
@@ -177,7 +177,7 @@ export default function NotFound() {
                 <div className="space-y-2">
                   <Button asChild className="w-full">
                     <Link href="/#contato">
-                      <Mail className="w-4 h-4 mr-2" />
+                      <MailIcon className="w-4 h-4 mr-2" />
                       Entrar em Contato
                     </Link>
                   </Button>

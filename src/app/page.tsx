@@ -1,6 +1,13 @@
 "use client";
 
-import { CloudUpload, Code, Lightbulb, Server, Users, Zap } from "lucide-react";
+import {
+  CloudUploadIcon,
+  CodeIcon,
+  LightbulbIcon,
+  ServerIcon,
+  UsersIcon,
+  ZapIcon,
+} from "@/components/icons";
 import { Container } from "@/components/layout-specific/container";
 import {
   HeroActions,
@@ -105,7 +112,7 @@ export default function Home() {
             <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
               <CardHeader>
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <Code className="w-6 h-6 text-primary" />
+                  <CodeIcon className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle>Ciência de dados</CardTitle>
                 <CardDescription>
@@ -125,7 +132,7 @@ export default function Home() {
             <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
               <CardHeader>
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <Server className="w-6 h-6 text-primary" />
+                  <ServerIcon className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle>Infraestrutura de nuvem</CardTitle>
                 <CardDescription>
@@ -144,7 +151,7 @@ export default function Home() {
             <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
               <CardHeader>
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <CloudUpload className="w-6 h-6 text-primary" />
+                  <CloudUploadIcon className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle>TensorFlow</CardTitle>
                 <CardDescription>
@@ -164,7 +171,7 @@ export default function Home() {
             <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
               <CardHeader>
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <Lightbulb className="w-6 h-6 text-primary" />
+                  <LightbulbIcon className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle>Full-Stack Development</CardTitle>
                 <CardDescription>
@@ -184,7 +191,7 @@ export default function Home() {
             <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
               <CardHeader>
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <Zap className="w-6 h-6 text-primary" />
+                  <ZapIcon className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle>Sistemas em Tempo Real</CardTitle>
                 <CardDescription>
@@ -204,7 +211,7 @@ export default function Home() {
             <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
               <CardHeader>
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <Users className="w-6 h-6 text-primary" />
+                  <UsersIcon className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle>Pesquisa e Inovação</CardTitle>
                 <CardDescription>

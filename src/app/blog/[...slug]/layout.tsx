@@ -1,6 +1,6 @@
-import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ArrowLeftIcon } from "@/components/icons";
 import { Container } from "@/components/layout-specific/container";
 import { Section } from "@/components/layout-specific/section";
 import { Button } from "@/components/ui/button";
@@ -57,7 +57,7 @@ export default async function BlogPostLayout({
                 className="text-muted-foreground hover:text-foreground"
               >
                 <Link href="/blog">
-                  <ArrowLeft className="mr-2" />
+                  <ArrowLeftIcon className="mr-2" />
                   Voltar ao Blog
                 </Link>
               </Button>
@@ -125,7 +125,7 @@ export default async function BlogPostLayout({
           <div className="flex items-center justify-between">
             <Button variant="outline" asChild>
               <Link href="/blog">
-                <ArrowLeft className="mr-2" />
+                <ArrowLeftIcon className="mr-2" />
                 Voltar ao Blog
               </Link>
             </Button>

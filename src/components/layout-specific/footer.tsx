@@ -1,5 +1,10 @@
-import { ExternalLink, Heart, Mail } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/icons";
+import {
+  ExternalLinkIcon,
+  GithubIcon,
+  HeartIcon,
+  LinkedinIcon,
+  MailIcon,
+} from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Container } from "./container";
@@ -19,7 +24,7 @@ const socialLinks = [
   },
   {
     href: "mailto:bezerrathm@gmail.com",
-    icon: Mail,
+    icon: MailIcon,
     label: "Email",
     description: "Entre em contato",
   },
@@ -136,7 +141,8 @@ export function Footer() {
             <div className="flex flex-col md:flex-row items-center gap-4 text-sm text-muted-foreground">
               <p className="flex items-center gap-1">
                 &copy; {currentYear} Thiago Bezerra. Feito com
-                <Heart className="h-3 w-3 text-red-500 fill-current" />e café
+                <HeartIcon className="h-3 w-3 text-red-500 fill-current" />e
+                café
               </p>
               <span className="hidden md:inline">•</span>
               <p>Todos os direitos reservados</p>
@@ -157,7 +163,7 @@ export function Footer() {
                   className="inline-flex items-center gap-1"
                 >
                   Ver código fonte
-                  <ExternalLink className="h-3 w-3" />
+                  <ExternalLinkIcon className="h-3 w-3" />
                 </a>
               </Button>
             </div>

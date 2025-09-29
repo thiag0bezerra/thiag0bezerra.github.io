@@ -1,8 +1,14 @@
 "use client";
 
-import { BookOpen, FileText, Home, Mail, Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import {
+  BookOpenIcon,
+  FileTextIcon,
+  HomeIcon,
+  MailIcon,
+  MenuIcon,
+} from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -15,9 +21,9 @@ import { cn } from "@/lib/utils";
 import { Container } from "./container";
 
 const navigationItems = [
-  { href: "/", label: "Início", icon: Home },
-  { href: "/blog", label: "Blog", icon: BookOpen },
-  { href: "/resume", label: "Currículo", icon: FileText },
+  { href: "/", label: "Início", icon: HomeIcon },
+  { href: "/blog", label: "Blog", icon: BookOpenIcon },
+  { href: "/resume", label: "Currículo", icon: FileTextIcon },
 ];
 
 export function Header() {
@@ -82,7 +88,7 @@ export function Header() {
               onClick={scrollToContact}
               className="hidden sm:inline-flex"
             >
-              <Mail className="w-4 h-4 mr-2" />
+              <MailIcon className="w-4 h-4 mr-2" />
               Contato
             </Button>
 
@@ -90,7 +96,7 @@ export function Header() {
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="sm" className="md:hidden">
-                  <Menu className="h-6 w-6" />
+                  <MenuIcon className="h-6 w-6" />
                   <span className="sr-only">Abrir menu</span>
                 </Button>
               </SheetTrigger>
@@ -120,7 +126,7 @@ export function Header() {
 
                   <div className="pt-4 border-t">
                     <Button onClick={scrollToContact} className="w-full">
-                      <Mail className="w-4 h-4 mr-2" />
+                      <MailIcon className="w-4 h-4 mr-2" />
                       Contato
                     </Button>
                   </div>
