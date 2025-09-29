@@ -5,7 +5,7 @@ applyTo: "**"
 # Copilot — main overview (stack, principles, workflow)
 
 Stack
-- Next.js 15 (App Router), React 19, TypeScript 5, Tailwind 4 + Shadcn
+- Next.js 15 (App Router), React 19, TypeScript 5, Tailwind 4 + Shadcn, PNPM
 - Node.js 20+
 - Use the #context7 tool to consult package documentation
 - Use the #shadcn tool to request, consult, configure, and customize UI components.
