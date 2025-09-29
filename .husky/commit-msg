@@ -1,2 +1,2 @@
 # Lint commit message using local commitlint (pnpm)
-pnpm exec commitlint --edit "$1"
+pnpm exec commitlint --verbose --edit "$1"
