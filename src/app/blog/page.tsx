@@ -18,9 +18,9 @@ function formatDate(date: Date) {
   });
 }
 
-export default function BlogPage() {
-  const posts = getAllBlogPosts();
-  const tags = getAllTags();
+export default async function BlogPage() {
+  const posts = await getAllBlogPosts();
+  const tags = await getAllTags();
   const sortedPosts = posts.sort((a, b) => b.date.getTime() - a.date.getTime());
   const featuredPost = sortedPosts.find((post) => post.featured);
   const otherPosts = sortedPosts.filter((post) => !post.featured);

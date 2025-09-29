@@ -3,14 +3,13 @@ import path from "node:path";
 import matter from "gray-matter";
 
 export interface BlogPost {
+  // Slug as posix path without extension. Supports nested: "dir/subdir/post"
   slug: string;
   title: string;
   description: string;
   publishedAt: string;
   readTime: string;
   tags: string[];
-  showMetadata: boolean;
-  headless: boolean;
   featured?: boolean;
 }
 
@@ -20,33 +19,46 @@ export interface BlogPostWithMetadata extends BlogPost {
 }
 
 /**
- * Lê os metadados de um arquivo MDX
+ * Lê os metadados de um arquivo MDX via processamento com gray-matter
  */
-export function readPostMetadata(filePath: string): BlogPost | null {
+export async function readPostMetadata(slug: string): Promise<BlogPost | null> {
   try {
-    const fileContent = fs.readFileSync(filePath, "utf-8");
-    const { data } = matter(fileContent);
+    const filePath = path.join(
+      process.cwd(),
+      "src",
+      "content",
+      "blog",
+      `${slug}.mdx`,
+    );
+    if (!fs.existsSync(filePath)) {
+      console.warn(`Post file not found: ${filePath}`);
+      return null;
+    }
+    const source = fs.readFileSync(filePath, "utf-8");
 
-    if (!data.title || !data.description || !data.publishedAt) {
-      console.warn(`Post ${filePath} está faltando metadados obrigatórios`);
+    const { data: frontmatter } = matter(source);
+
+    if (
+      !frontmatter ||
+      typeof frontmatter.title !== "string" ||
+      typeof frontmatter.description !== "string" ||
+      typeof frontmatter.publishedAt !== "string"
+    ) {
+      console.warn(`Post ${slug} is missing required metadata`);
       return null;
     }
 
-    const fileName = path.basename(filePath, ".mdx");
-
     return {
-      slug: fileName,
-      title: data.title,
-      description: data.description,
-      publishedAt: data.publishedAt,
-      readTime: data.readTime || "5 min",
-      tags: data.tags || [],
-      showMetadata: data.showMetadata !== false,
-      headless: data.headless === true,
-      featured: data.featured === true,
+      slug,
+      title: frontmatter.title,
+      description: frontmatter.description,
+      publishedAt: frontmatter.publishedAt,
+      readTime: frontmatter.readTime || "5 min",
+      tags: Array.isArray(frontmatter.tags) ? frontmatter.tags : [],
+      featured: Boolean(frontmatter.featured),
     };
   } catch (error) {
-    console.error(`Erro ao ler metadados do post ${filePath}:`, error);
+    console.error(`Error reading metadata for post ${slug}:`, error);
     return null;
   }
 }
@@ -54,64 +66,69 @@ export function readPostMetadata(filePath: string): BlogPost | null {
 /**
  * Descobre todos os posts do blog dinamicamente
  */
-export function getAllBlogPosts(): BlogPostWithMetadata[] {
+export async function getAllBlogPosts(): Promise<BlogPostWithMetadata[]> {
   const blogDir = path.join(process.cwd(), "src", "content", "blog");
 
   if (!fs.existsSync(blogDir)) {
-    console.warn("Diretório de blog não encontrado:", blogDir);
+    console.warn("Blog directory not found:", blogDir);
     return [];
   }
 
   const files = fs.readdirSync(blogDir, { recursive: true, encoding: "utf-8" });
   const mdxFiles = files.filter((file: string) => file.endsWith(".mdx"));
+  const slugs = mdxFiles.map((file: string) =>
+    file.replace(/\\/g, "/").replace(/\.mdx$/, ""),
+  );
 
-  const posts = mdxFiles
-    .map((file: string) => {
-      const filePath = path.join(blogDir, file);
-      const postMetadata = readPostMetadata(filePath);
+  const posts = (
+    await Promise.all(
+      slugs.map(async (slug) => {
+        const postMetadata = await readPostMetadata(slug);
 
-      if (!postMetadata) {
-        return null;
-      }
-
-      // Determinar categoria baseada nas tags
-      const getCategory = (tags: string[]): string => {
-        if (
-          tags.some(
-            (tag) =>
-              tag.toLowerCase().includes("next") ||
-              tag.toLowerCase().includes("react"),
-          )
-        ) {
-          return "Web Development";
+        if (!postMetadata) {
+          return null;
         }
-        if (
-          tags.some(
-            (tag) =>
-              tag.toLowerCase().includes("typescript") ||
-              tag.toLowerCase().includes("javascript"),
-          )
-        ) {
-          return "JavaScript";
-        }
-        if (
-          tags.some(
-            (tag) =>
-              tag.toLowerCase().includes("node") ||
-              tag.toLowerCase().includes("backend"),
-          )
-        ) {
-          return "Backend";
-        }
-        return tags[0] || "Tecnologia";
-      };
 
-      return {
-        ...postMetadata,
-        date: new Date(postMetadata.publishedAt),
-        category: getCategory(postMetadata.tags),
-      } satisfies BlogPostWithMetadata;
-    })
+        // Determinar categoria baseada nas tags
+        const getCategory = (tags: string[]): string => {
+          if (
+            tags.some(
+              (tag) =>
+                tag.toLowerCase().includes("next") ||
+                tag.toLowerCase().includes("react"),
+            )
+          ) {
+            return "Web Development";
+          }
+          if (
+            tags.some(
+              (tag) =>
+                tag.toLowerCase().includes("typescript") ||
+                tag.toLowerCase().includes("javascript"),
+            )
+          ) {
+            return "JavaScript";
+          }
+          if (
+            tags.some(
+              (tag) =>
+                tag.toLowerCase().includes("node") ||
+                tag.toLowerCase().includes("backend"),
+            )
+          ) {
+            return "Backend";
+          }
+          return tags[0] || "Tecnologia";
+        };
+
+        return {
+          ...postMetadata,
+          date: new Date(postMetadata.publishedAt),
+          category: getCategory(postMetadata.tags),
+        } satisfies BlogPostWithMetadata;
+      }),
+    )
+  )
     .filter((post): post is BlogPostWithMetadata => post !== null)
     .sort((a, b) => b.date.getTime() - a.date.getTime());
 
@@ -119,19 +136,29 @@ export function getAllBlogPosts(): BlogPostWithMetadata[] {
 }
 
 /**
- * Obtém todas as categorias únicas dos posts
+ * Lista todos os slugs como arrays de segmentos (para generateStaticParams).
+ * Ex.: "dir/sub/post" => ["dir", "sub", "post"].
  */
-export function getAllCategories(): string[] {
-  const posts = getAllBlogPosts();
-  const categories = new Set(posts.map((post) => post.category));
-  return Array.from(categories);
+export function getAllPostSlugSegments(): string[][] {
+  const blogDir = path.join(process.cwd(), "src", "content", "blog");
+
+  if (!fs.existsSync(blogDir)) return [];
+
+  const files = fs.readdirSync(blogDir, { recursive: true, encoding: "utf-8" });
+  const mdxFiles = files.filter((file: string) => file.endsWith(".mdx"));
+  return mdxFiles.map((file) =>
+    file
+      .replace(/\\/g, "/")
+      .replace(/\.mdx$/, "")
+      .split("/"),
+  );
 }
 
 /**
  * Obtém todas as tags únicas dos posts
  */
-export function getAllTags(): string[] {
-  const posts = getAllBlogPosts();
+export async function getAllTags(): Promise<string[]> {
+  const posts = await getAllBlogPosts();
   const allTags = posts.flatMap((post) => post.tags);
   const uniqueTags = new Set(allTags);
   return Array.from(uniqueTags);
