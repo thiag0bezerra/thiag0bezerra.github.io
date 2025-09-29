@@ -3,14 +3,13 @@
 import {
   CloudUpload,
   Code,
-  Github,
   Lightbulb,
-  Linkedin,
   Mail,
   Server,
   Users,
   Zap,
 } from "lucide-react";
+import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import { Container } from "@/components/layout-specific/container";
 import {
   HeroActions,
@@ -31,11 +30,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 
-const mainSkills = ["React", "TypeScript", "Node.js", "Python", "AWS"];
+const mainSkills = [
+  "Ciência de dados",
+  "Infraestrutura de nuvem",
+  "TensorFlow",
+];
 
 export default function Home() {
   const scrollToContact = () => {
@@ -54,12 +54,13 @@ export default function Home() {
               <HeroHeading>
                 Olá, sou{" "}
                 <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                  Ana Clara
+                  Thiago Bezerra
                 </span>
               </HeroHeading>
               <HeroDescription>
-                Desenvolvedora Full Stack apaixonada por criar soluções web
-                modernas e eficientes
+                Senior Software Engineer | Full-Stack Developer | AI Researcher.
+                Apaixonado por criar soluções inovadoras em ciência de dados,
+                infraestrutura de nuvem e TensorFlow.
               </HeroDescription>
             </div>
 
@@ -88,7 +89,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/10 rounded-full blur-3xl"></div>
               <div className="relative z-10 w-80 h-80 rounded-full bg-muted flex items-center justify-center overflow-hidden border-4 border-background shadow-2xl">
                 <span className="text-6xl font-bold text-muted-foreground">
-                  AC
+                  TB
                 </span>
               </div>
             </div>
@@ -104,8 +105,8 @@ export default function Home() {
               Minha Expertise
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Experiência em desenvolvimento full stack com foco em tecnologias
-              modernas e melhores práticas
+              Experiência em desenvolvimento de software, IA e infraestrutura de
+              nuvem com foco em soluções inovadoras
             </p>
           </div>
 
@@ -115,18 +116,17 @@ export default function Home() {
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                   <Code className="w-6 h-6 text-primary" />
                 </div>
-                <CardTitle>Frontend Development</CardTitle>
+                <CardTitle>Ciência de dados</CardTitle>
                 <CardDescription>
-                  Criação de interfaces modernas e responsivas com React,
-                  Next.js e TypeScript
+                  Análise avançada de dados, detecção de fraudes e insights
+                  acionáveis.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline">React</Badge>
-                  <Badge variant="outline">Next.js</Badge>
-                  <Badge variant="outline">TypeScript</Badge>
-                  <Badge variant="outline">Tailwind CSS</Badge>
+                  <Badge variant="outline">Python</Badge>
+                  <Badge variant="outline">Machine Learning</Badge>
+                  <Badge variant="outline">Análise de Dados</Badge>
                 </div>
               </CardContent>
             </Card>
@@ -136,28 +136,7 @@ export default function Home() {
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                   <Server className="w-6 h-6 text-primary" />
                 </div>
-                <CardTitle>Backend Development</CardTitle>
-                <CardDescription>
-                  Desenvolvimento de APIs robustas e escaláveis com Node.js e
-                  Python
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline">Node.js</Badge>
-                  <Badge variant="outline">Python</Badge>
-                  <Badge variant="outline">Express</Badge>
-                  <Badge variant="outline">FastAPI</Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <CloudUpload className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle>Cloud & DevOps</CardTitle>
+                <CardTitle>Infraestrutura de nuvem</CardTitle>
                 <CardDescription>
                   Deploy e gerenciamento de aplicações na nuvem com AWS e Docker
                 </CardDescription>
@@ -167,7 +146,26 @@ export default function Home() {
                   <Badge variant="outline">AWS</Badge>
                   <Badge variant="outline">Docker</Badge>
                   <Badge variant="outline">CI/CD</Badge>
-                  <Badge variant="outline">Vercel</Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+              <CardHeader>
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                  <CloudUpload className="w-6 h-6 text-primary" />
+                </div>
+                <CardTitle>TensorFlow</CardTitle>
+                <CardDescription>
+                  Desenvolvimento de modelos de IA e aprendizado de máquina para
+                  aplicações reais
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="outline">TensorFlow</Badge>
+                  <Badge variant="outline">AI Models</Badge>
+                  <Badge variant="outline">Deep Learning</Badge>
                 </div>
               </CardContent>
             </Card>
@@ -177,18 +175,17 @@ export default function Home() {
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                   <Lightbulb className="w-6 h-6 text-primary" />
                 </div>
-                <CardTitle>UI/UX Design</CardTitle>
+                <CardTitle>Full-Stack Development</CardTitle>
                 <CardDescription>
-                  Design de experiências intuitivas e acessíveis para todos os
-                  usuários
+                  Desenvolvimento completo de aplicações web e sistemas
+                  embarcados
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline">Figma</Badge>
-                  <Badge variant="outline">Design System</Badge>
-                  <Badge variant="outline">Acessibilidade</Badge>
-                  <Badge variant="outline">Usabilidade</Badge>
+                  <Badge variant="outline">JavaScript</Badge>
+                  <Badge variant="outline">React</Badge>
+                  <Badge variant="outline">Node.js</Badge>
                 </div>
               </CardContent>
             </Card>
@@ -198,18 +195,17 @@ export default function Home() {
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                   <Zap className="w-6 h-6 text-primary" />
                 </div>
-                <CardTitle>Performance</CardTitle>
+                <CardTitle>Sistemas em Tempo Real</CardTitle>
                 <CardDescription>
-                  Otimização de aplicações para máxima performance e experiência
-                  do usuário
+                  Desenvolvimento de sistemas críticos com baixa latência e alta
+                  confiabilidade
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline">Core Web Vitals</Badge>
-                  <Badge variant="outline">Lighthouse</Badge>
-                  <Badge variant="outline">Bundle Analysis</Badge>
-                  <Badge variant="outline">Caching</Badge>
+                  <Badge variant="outline">Real-time Systems</Badge>
+                  <Badge variant="outline">Embedded Software</Badge>
+                  <Badge variant="outline">Robotics</Badge>
                 </div>
               </CardContent>
             </Card>
@@ -219,17 +215,17 @@ export default function Home() {
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                   <Users className="w-6 h-6 text-primary" />
                 </div>
-                <CardTitle>Metodologias Ágeis</CardTitle>
+                <CardTitle>Pesquisa e Inovação</CardTitle>
                 <CardDescription>
-                  Trabalho colaborativo com foco na entrega de valor contínuo
+                  Colaboração em projetos de pesquisa acadêmica e
+                  desenvolvimento de ferramentas forenses
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline">Scrum</Badge>
-                  <Badge variant="outline">Kanban</Badge>
-                  <Badge variant="outline">Git Flow</Badge>
-                  <Badge variant="outline">Code Review</Badge>
+                  <Badge variant="outline">Research</Badge>
+                  <Badge variant="outline">Forensic Tools</Badge>
+                  <Badge variant="outline">Academic Projects</Badge>
                 </div>
               </CardContent>
             </Card>
@@ -237,103 +233,6 @@ export default function Home() {
         </Container>
       </Section>
 
-      {/* Contact Section */}
-      <Section id="contato">
-        <Container size="md">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Vamos Trabalhar Juntos
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Tem um projeto em mente? Vamos conversar sobre como posso ajudar a
-              torná-lo realidade.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div className="space-y-8">
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                    <Mail className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Email</h3>
-                    <p className="text-muted-foreground">ana.clara@email.com</p>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      Respondo dentro de 24 horas
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                    <Linkedin className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">LinkedIn</h3>
-                    <p className="text-muted-foreground">
-                      linkedin.com/in/ana-clara
-                    </p>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      Conecte-se comigo profissionalmente
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                    <Github className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">GitHub</h3>
-                    <p className="text-muted-foreground">
-                      github.com/ana-clara
-                    </p>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      Veja meus projetos e contribuições
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Envie uma mensagem</CardTitle>
-                <CardDescription>
-                  Preencha o formulário abaixo e entrarei em contato em breve
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="firstName">Nome</Label>
-                    <Input id="firstName" placeholder="Seu nome" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="lastName">Sobrenome</Label>
-                    <Input id="lastName" placeholder="Seu sobrenome" />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="seu@email.com" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="message">Mensagem</Label>
-                  <Textarea
-                    id="message"
-                    placeholder="Conte-me sobre seu projeto..."
-                    className="min-h-[120px]"
-                  />
-                </div>
-                <Button className="w-full">Enviar Mensagem</Button>
-              </CardContent>
-            </Card>
-          </div>
-        </Container>
-      </Section>
     </div>
   );
 }

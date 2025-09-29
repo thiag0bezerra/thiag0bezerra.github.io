@@ -20,18 +20,18 @@ export async function generateMetadata({
   const postTitle = slug[slug.length - 1].replace(/-/g, " ");
 
   return {
-    title: `${postTitle} | Blog - Ana Clara`,
-    description: `Leia sobre ${postTitle} no blog de Ana Clara - Desenvolvedora Full Stack`,
+    title: `${postTitle} | Blog - Thiago Bezerra`,
+    description: `Leia sobre ${postTitle} no blog de Thiago Bezerra - Senior Software Engineer`,
     openGraph: {
       title: postTitle,
-      description: `Leia sobre ${postTitle} no blog de Ana Clara - Desenvolvedora Full Stack`,
+      description: `Leia sobre ${postTitle} no blog de Thiago Bezerra - Senior Software Engineer`,
       type: "article",
-      authors: ["Ana Clara"],
+      authors: ["Thiago Bezerra"],
     },
     twitter: {
       card: "summary_large_image",
       title: postTitle,
-      description: `Leia sobre ${postTitle} no blog de Ana Clara - Desenvolvedora Full Stack`,
+      description: `Leia sobre ${postTitle} no blog de Thiago Bezerra - Senior Software Engineer`,
     },
   };
 }
@@ -131,7 +131,7 @@ export default async function BlogPostLayout({
             </Button>
 
             <Button variant="outline" asChild>
-              <Link href="/about">Sobre a autora</Link>
+              <Link href="/about">Sobre o autor</Link>
             </Button>
           </div>
         </Container>

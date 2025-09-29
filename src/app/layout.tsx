@@ -10,22 +10,23 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ana Clara - Portfólio",
+  title: "Thiago Bezerra - Portfólio",
   description:
-    "Portfólio pessoal de Ana Clara - Desenvolvedora Full Stack especializada em tecnologias modernas",
+    "Portfólio pessoal de Thiago Bezerra - Senior Software Engineer | Full-Stack Developer | AI Researcher",
   keywords: [
-    "Ana Clara",
-    "Desenvolvedor",
+    "Thiago Bezerra",
+    "Software Engineer",
     "Full Stack",
-    "React",
-    "Next.js",
-    "TypeScript",
+    "AI Researcher",
+    "Ciência de dados",
+    "Infraestrutura de nuvem",
+    "TensorFlow",
   ],
-  authors: [{ name: "Ana Clara" }],
+  authors: [{ name: "Thiago Bezerra" }],
   openGraph: {
-    title: "Ana Clara - Portfólio",
+    title: "Thiago Bezerra - Portfólio",
     description:
-      "Portfólio pessoal de Ana Clara - Desenvolvedora Full Stack especializada em tecnologias modernas",
+      "Portfólio pessoal de Thiago Bezerra - Senior Software Engineer | Full-Stack Developer | AI Researcher",
     type: "website",
     locale: "pt_BR",
   },

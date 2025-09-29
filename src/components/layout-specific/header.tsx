@@ -1,6 +1,6 @@
 "use client";
 
-import { BookOpen, FileText, Home, Mail, Menu, User } from "lucide-react";
+import { BookOpen, FileText, Home, Mail, Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -16,7 +16,6 @@ import { Container } from "./container";
 
 const navigationItems = [
   { href: "/", label: "Início", icon: Home },
-  { href: "/about", label: "Sobre", icon: User },
   { href: "/blog", label: "Blog", icon: BookOpen },
   { href: "/resume", label: "Currículo", icon: FileText },
 ];
@@ -42,10 +41,10 @@ export function Header() {
           <Link href="/" className="flex items-center space-x-3">
             <div className="h-9 w-9 bg-primary rounded-full flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-sm">
-                AC
+                TB
               </span>
             </div>
-            <span className="font-semibold text-xl">Ana Clara</span>
+            <span className="font-semibold text-xl">Thiago Bezerra</span>
           </Link>
 
           {/* Desktop Navigation */}

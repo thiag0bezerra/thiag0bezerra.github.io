@@ -197,7 +197,7 @@ export default function NotFound() {
                 href="/"
                 className="hover:text-foreground transition-colors"
               >
-                Ana Clara
+                Thiago Bezerra
               </Link>
               <span>/</span>
               <span>404</span>

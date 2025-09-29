@@ -7,17 +7,19 @@ applyTo: "**"
 Stack
 - Next.js 15 (App Router), React 19, TypeScript 5, Tailwind 4 + Shadcn
 - Node.js 20+
-- Use a tool #context7 para consultar a documentação dos pacotes
-- Use a tool #shadcn para requisitar, consultar, configurar e personalizar componentes da UI.
-- Use a tool #todos para gerenciar tarefas e lembretes.
-- Use a tool #think para raciocinar sobre problemas complexos e gerar soluções.
-- Os arquivos .mdx usam o Github Flavored Markdown (GFM).
+- Use the #context7 tool to consult package documentation
+- Use the #shadcn tool to request, consult, configure, and customize UI components.
+- Use the #todos tool to manage tasks and reminders.
+- Use the #think tool to reason about complex problems and generate solutions.
+- The .mdx files use GitHub Flavored Markdown (GFM).
 
 
 Principles
-- Production quality: simples > complexo, explícito > implícito.
-- Tipos explícitos (nunca fazer referência a `any`); funções pequenas e determinísticas.
-- Fail fast: validação cedo, mensagens claras.
-- Comentários apenas quando lógica não é óbvia.
-- UI consistente e acessível. Use auto layout e espaçamento consistente. Prefira uma abordagem responsiva e mobile-first.
-- Prefira páginas page.tsx enxutas e objetivas: busque reutilizar componentes de src/components/**/*.tsx à implementar manualmente todos os elementos na página.
+- Production quality: simple > complex, explicit > implicit.
+- Explicit types (never reference `any`); small and deterministic functions.
+- Fail fast: early validation, clear messages.
+- Comments only when logic is not obvious.
+- Consistent and accessible UI. Use auto layout and consistent spacing. Prefer a responsive and mobile-first approach.
+- Prefer lean and objective page.tsx pages: seek to reuse components from src/components/**/*.tsx rather than manually implementing all elements on the page.
+
+- For "brand icons" (e.g., GitHub, LinkedIn), instead of using lucide-react, use those provided by simple-icons.

@@ -1,23 +1,24 @@
-import { ExternalLink, Github, Heart, Linkedin, Mail } from "lucide-react";
+import { ExternalLink, Heart, Mail } from "lucide-react";
+import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Container } from "./container";
 
 const socialLinks = [
   {
-    href: "https://github.com/ana-clara",
-    icon: Github,
+    href: "https://github.com/thiag0bezerra",
+    icon: GithubIcon,
     label: "GitHub",
     description: "Veja meus projetos",
   },
   {
-    href: "https://linkedin.com/in/ana-clara",
-    icon: Linkedin,
+    href: "https://www.linkedin.com/in/thiag0bezerra",
+    icon: LinkedinIcon,
     label: "LinkedIn",
     description: "Conecte-se comigo",
   },
   {
-    href: "mailto:ana.clara@email.com",
+    href: "mailto:bezerrathm@gmail.com",
     icon: Mail,
     label: "Email",
     description: "Entre em contato",
@@ -26,7 +27,6 @@ const socialLinks = [
 
 const quickLinks = [
   { href: "/", label: "Início" },
-  { href: "/about", label: "Sobre" },
   { href: "/blog", label: "Blog" },
   { href: "/#contato", label: "Contato" },
 ];
@@ -46,15 +46,15 @@ export function Footer() {
                 <div className="flex items-center space-x-3">
                   <div className="h-10 w-10 bg-primary rounded-full flex items-center justify-center">
                     <span className="text-primary-foreground font-bold">
-                      AC
+                      TB
                     </span>
                   </div>
-                  <span className="font-semibold text-xl">Ana Clara</span>
+                  <span className="font-semibold text-xl">Thiago Bezerra</span>
                 </div>
                 <p className="text-muted-foreground max-w-md leading-relaxed">
-                  Desenvolvedora Full Stack apaixonada por criar soluções web
-                  modernas e eficientes. Especializada em React, TypeScript,
-                  Node.js e tecnologias de cloud.
+                  Senior Software Engineer | Full-Stack Developer | AI
+                  Researcher especializado em ciência de dados, infraestrutura
+                  de nuvem e TensorFlow.
                 </p>
               </div>
 
@@ -111,10 +111,10 @@ export function Footer() {
                 <div>
                   <p className="text-muted-foreground">Email</p>
                   <a
-                    href="mailto:ana.clara@email.com"
+                    href="mailto:bezerrathm@gmail.com"
                     className="text-foreground hover:text-primary transition-colors"
                   >
-                    ana.clara@email.com
+                    bezerrathm@gmail.com
                   </a>
                 </div>
                 <div>
@@ -135,7 +135,7 @@ export function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex flex-col md:flex-row items-center gap-4 text-sm text-muted-foreground">
               <p className="flex items-center gap-1">
-                &copy; {currentYear} Ana Clara. Feito com
+                &copy; {currentYear} Thiago Bezerra. Feito com
                 <Heart className="h-3 w-3 text-red-500 fill-current" />e café
               </p>
               <span className="hidden md:inline">•</span>
