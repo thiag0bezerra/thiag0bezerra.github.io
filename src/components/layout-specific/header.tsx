@@ -9,6 +9,7 @@ import {
   MailIcon,
   MenuIcon,
 } from "@/components/icons";
+import { ThemeSwitch } from "@/components/theme-switch";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -81,8 +82,10 @@ export function Header() {
             </NavigationMenuList>
           </NavigationMenu>
 
-          {/* Contact Button & Mobile Menu */}
+          {/* Contact Button, Theme Toggle & Mobile Menu */}
           <div className="flex items-center gap-3">
+            <ThemeSwitch />
+
             <Button
               size="sm"
               onClick={scrollToContact}
@@ -124,11 +127,16 @@ export function Header() {
                     })}
                   </div>
 
-                  <div className="pt-4 border-t">
+                  <div className="pt-4 border-t space-y-3">
                     <Button onClick={scrollToContact} className="w-full">
                       <MailIcon className="w-4 h-4 mr-2" />
                       Contato
                     </Button>
+
+                    <div className="flex items-center justify-between px-1">
+                      <span className="font-medium">Alternar tema</span>
+                      <ThemeSwitch />
+                    </div>
                   </div>
                 </div>
               </SheetContent>

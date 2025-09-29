@@ -16,8 +16,10 @@ import {
   Linkedin,
   Mail,
   Menu,
+  Moon,
   Search,
   Server,
+  Sun,
   User,
   Users,
   X,
@@ -102,6 +104,14 @@ export const SearchIcon = ({ className }: IconProps) => (
 
 export const ServerIcon = ({ className }: IconProps) => (
   <Server className={className} />
+);
+
+export const MoonIcon = ({ className }: IconProps) => (
+  <Moon className={className} />
+);
+
+export const SunIcon = ({ className }: IconProps) => (
+  <Sun className={className} />
 );
 
 export const UserIcon = ({ className }: IconProps) => (
