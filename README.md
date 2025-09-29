@@ -81,3 +81,26 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## 🧩 Conventional Commits & Commit Hooks
+
+This repo enforces Conventional Commits via Commitlint + Husky.
+
+- Commit messages must follow: `type(scope?): subject`
+- Allowed types include: `build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test`
+
+Tooling:
+- Commitlint config: `commitlint.config.ts` (extends `@commitlint/config-conventional`)
+- Husky hook: `.husky/commit-msg` runs Commitlint on every commit
+
+Manual lint a message:
+
+```bash
+pnpm exec commitlint --from=HEAD~1 --to=HEAD
+```
+
+If a commit fails, amend with a proper message, for example:
+
+```bash
+git commit --amend -m "feat: add new hero section"
+```
