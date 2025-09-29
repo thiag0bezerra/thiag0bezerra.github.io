@@ -32,18 +32,17 @@
   "typescript.implementationsCodeLens.enabled": true,
   // --- Explorer / busca / watchers ---
   "files.exclude": {
-    "**/.next": true,
-    "**/node_modules": true,
-    "**/dist": true,
-    "**/build": true,
-    "**/out": true,
-    "**/coverage": true,
-    "**/.turbo": true,
-    "**/__pycache__": true
+    "**/.git/**": true,
+    "**/node_modules/*/**": true,
+    "**/.next/**": true,
+    "**/dist/**": true,
+    "**/build/**": true,
+    "**/out/**": true,
+    "**/coverage/**": true,
+    "**/.turbo/**": true
   },
   "files.watcherExclude": {
-    "**/.git/objects/**": true,
-    "**/.git/subtree-cache/**": true,
+    "**/.git/**": true,
     "**/node_modules/*/**": true,
     "**/.next/**": true,
     "**/dist/**": true,
@@ -56,8 +55,10 @@
   "files.encoding": "utf8",
   "files.eol": "\n",
   "files.trimTrailingWhitespace": true,
-  "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
   // --- Editor: produtividade sem surpresas ---
   "editor.acceptSuggestionOnEnter": "smart",
   "editor.bracketPairColorization.enabled": true,
