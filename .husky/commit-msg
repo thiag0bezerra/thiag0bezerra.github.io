@@ -1,1 +1,5 @@
-pnpm exec commitlint --edit $1
+#!/usr/bin/env sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Lint commit message using commitlint (pnpm)
+pnpm dlx commitlint --edit "$1"

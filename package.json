@@ -47,6 +47,7 @@
     "@biomejs/biome": "2.2.0",
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
+    "@commitlint/types": "^19.5.0",
     "@tailwindcss/postcss": "^4",
     "@types/lodash.throttle": "^4.1.9",
     "@types/node": "^20",
