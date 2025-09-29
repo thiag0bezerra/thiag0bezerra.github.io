@@ -1,15 +1,6 @@
 "use client";
 
-import {
-  CloudUpload,
-  Code,
-  Lightbulb,
-  Mail,
-  Server,
-  Users,
-  Zap,
-} from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/icons";
+import { CloudUpload, Code, Lightbulb, Server, Users, Zap } from "lucide-react";
 import { Container } from "@/components/layout-specific/container";
 import {
   HeroActions,
@@ -232,7 +223,6 @@ export default function Home() {
           </div>
         </Container>
       </Section>
-
     </div>
   );
 }

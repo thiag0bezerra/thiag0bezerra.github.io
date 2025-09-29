@@ -1,7 +1,6 @@
 {
   // --- Typescript ---
   "[typescript]": {
-    "editor.defaultFormatter": "biomejs.biome",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.fixAll.biome": "always",
@@ -9,7 +8,6 @@
     }
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "biomejs.biome",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.fixAll.biome": "always",
@@ -21,7 +19,9 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.suggest.autoImports": true,
   // adicionar imports automaticamente ao colar
-  "editor.pasteAs.preferences": ["text.updateImports.jsts"],
+  "editor.pasteAs.preferences": [
+    "text.updateImports.jsts"
+  ],
   // Preferências de geração de código
   "typescript.preferences.importModuleSpecifier": "shortest",
   "typescript.preferences.quoteStyle": "double",
@@ -71,13 +71,6 @@
   // --- Explorer UI ---
   "explorer.compactFolders": false,
   "workbench.tree.indent": 12,
-  // --- Biome (VS Code extension) ---
-  "biome.enabled": true,
-  // Se estiver usando Biome v2 e um caminho custom:
-  "biome.configurationPath": "biome.json",
-  "biome.suggestInstallingGlobally": true,
-  // Ativar somente quando houver biome.json no workspace
-  "biome.requireConfiguration": true,
   // Configurações do chat
   "chat.agent.enabled": true,
   "chat.agent.maxRequests": 100000,
@@ -121,19 +114,4 @@
   "terminal.integrated.shellIntegration.history": 100,
   "terminal.integrated.shellIntegration.showCommandGuide": true,
   "terminal.integrated.shellIntegration.decorationsEnabled": "both",
-  "chat.tools.terminal.autoApprove": {
-    "cd": true,
-    "pnpm": true,
-    "rm": true,
-    "mv": true,
-    "mkdir": true,
-    "rmdir": true,
-    "touch": true,
-    "npx": true,
-    "pnpx": true
-  },
-  "chat.tools.edits.autoApprove": {
-    "**/*": true,
-    "**/.git/**": false
-  }
 }
