@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "biome ci && tsc --noEmit && next build",
+    "build": "biome ci --error-on-warnings && tsc --noEmit && next build",
     "start": "next start",
     "format": "biome format --write",
     "fix": "biome check --write",
