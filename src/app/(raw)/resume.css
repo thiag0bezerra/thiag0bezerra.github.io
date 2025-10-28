@@ -134,13 +134,13 @@
     /* Compact text sizes for print */
     .text-2xl,
     .text-3xl {
-      font-size: 16px !important;
-      margin-bottom: 0.15rem !important;
+      font-size: 16px;
+      margin-bottom: 0.15rem;
     }
 
     .text-sm {
       font-size: 10px;
-      margin-bottom: 0.15rem !important;
+      margin-bottom: 0.15rem;
     }
 
     .text-\[13px\] {

@@ -138,7 +138,8 @@ const experiencesData: Experience[] = [
     ],
   },
   {
-    organization: "PROCAD/CAPES – UFPB & UFF in partnership with the Federal Police",
+    organization:
+      "PROCAD/CAPES – UFPB & UFF in partnership with the Federal Police",
     position: "Machine Learning Engineer",
     location: "Brazil",
     period: "February 2024 – June 2025",
@@ -193,7 +194,12 @@ const skillsData: Skills = {
   technical: [
     {
       category: "Data Science & AI",
-      skills: ["TensorFlow", "Machine Learning", "Large Language Models", "Data Analysis"],
+      skills: [
+        "TensorFlow",
+        "Machine Learning",
+        "Large Language Models",
+        "Data Analysis",
+      ],
       level: "Advanced",
     },
     {
@@ -203,12 +209,29 @@ const skillsData: Skills = {
     },
     {
       category: "Programming Languages & Frameworks",
-      skills: ["Python", "JavaScript/TypeScript", "C++", "C#", "Ruby on Rails", "Django", "NestJS", "Next.js", "React", "ASP.NET"],
+      skills: [
+        "Python",
+        "JavaScript/TypeScript",
+        "C++",
+        "C#",
+        "Ruby on Rails",
+        "Django",
+        "NestJS",
+        "Next.js",
+        "React",
+        "ASP.NET",
+      ],
       level: "Advanced",
     },
     {
       category: "Software Engineering",
-      skills: ["Agile", "Microservices", "RESTful APIs", "Embedded Systems", "Real-time Systems"],
+      skills: [
+        "Agile",
+        "Microservices",
+        "RESTful APIs",
+        "Embedded Systems",
+        "Real-time Systems",
+      ],
       level: "Advanced",
     },
   ],
@@ -232,7 +255,8 @@ const skillsData: Skills = {
 
 const publicationsData: Publication[] = [
   {
-    title: "Integration of Robot Operating System and Ptolemy for Design of Real-time Multi-Robots Environments",
+    title:
+      "Integration of Robot Operating System and Ptolemy for Design of Real-time Multi-Robots Environments",
   },
 ];
 
@@ -485,16 +509,14 @@ const SkillsSection: React.FC<{ skills: Skills }> = ({ skills }) => (
   <section className="mt-4 avoid-break">
     <h2 className="section-title">Skills & Interests</h2>
     <div className="text-[12px] mt-1 space-y-1">
-      {skills.technical && skills.technical.length > 0 && (
-        <>
-          {skills.technical.map((tech, index) => (
-            <div key={tech.category}>
-              <span className="font-semibold">{tech.category}:</span>{" "}
-              {tech.skills.join(", ")}
-            </div>
-          ))}
-        </>
-      )}
+      {skills.technical &&
+        skills.technical.length > 0 &&
+        skills.technical.map((tech) => (
+          <div key={tech.category}>
+            <span className="font-semibold">{tech.category}:</span>{" "}
+            {tech.skills.join(", ")}
+          </div>
+        ))}
       {skills.languages && skills.languages.length > 0 && (
         <div>
           <span className="font-semibold">Languages:</span>{" "}
