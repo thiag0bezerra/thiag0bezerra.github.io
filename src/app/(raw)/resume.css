@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Tailwind v4: tema mínimo + utilitários de impressão/A4 */
+/* Tailwind v4: minimal theme + print/A4 utilities */
 @theme {
   --font-sans:
     Inter, ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial,
@@ -19,21 +19,21 @@
   }
 
   body {
-    @apply bg-white text-[var(--color-ink)] font-sans antialiased;
+    @apply bg-white text-ink font-sans antialiased;
   }
 
   a {
     @apply underline hover:no-underline;
   }
 
-  /* Título de seção usado no App.tsx */
+  /* Section title used in page.tsx */
   .section-title {
-    @apply text-[11px] uppercase tracking-wider font-semibold text-[var(--color-muted)] border-b border-gray-200 pb-1 mb-2;
+    @apply text-[11px] uppercase tracking-wider font-semibold text-muted border-b border-gray-200 pb-1 mb-2;
   }
 }
 
 @layer utilities {
-  /* Largura A4 para preview web (impressão ajusta automático) */
+  /* A4 width for web preview (print adjusts automatically) */
   .a4 {
     width: 210mm;
     min-height: 297mm;
@@ -45,14 +45,15 @@
 
   @media print {
     @page {
-      margin: 0.5cm;
+      margin: 0.4cm;
+      size: A4;
     }
 
     body {
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
-      font-size: 12px;
-      line-height: 1.3;
+      font-size: 11px;
+      line-height: 1.25;
     }
 
     .a4 {
@@ -63,54 +64,115 @@
 
     /* Reduce spacing between sections */
     .section-title {
-      @apply text-[10px] uppercase tracking-wider font-semibold text-[var(--color-muted)] border-b border-gray-200 pb-0.5 mb-1;
+      @apply text-[9px] uppercase tracking-wider font-semibold text-muted border-b border-gray-200 pb-0.5 mb-0.5;
+      margin-top: 0.5rem;
     }
 
     /* Compact spacing for resume sections */
     section {
-      margin-top: 0.75rem;
-    }
-
-    .mt-6 {
-      margin-top: 0.75rem;
-    }
-
-    .mt-4 {
       margin-top: 0.5rem;
     }
 
-    .mt-2 {
+    .mt-6 {
+      margin-top: 0.5rem;
+    }
+
+    .mt-5 {
+      margin-top: 0.4rem;
+    }
+
+    .mt-4 {
+      margin-top: 0.35rem;
+    }
+
+    .mt-3 {
       margin-top: 0.25rem;
+    }
+
+    .mt-2 {
+      margin-top: 0.2rem;
+    }
+
+    .mt-1 {
+      margin-top: 0.1rem;
     }
 
     .mb-2 {
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .mb-1 {
+      margin-bottom: 0.1rem;
+    }
+
+    .pt-4 {
+      padding-top: 0.3rem;
+    }
+
+    .pb-4 {
+      padding-bottom: 0.3rem;
     }
 
     .space-y-2 > * + * {
-      margin-top: 0.25rem;
+      margin-top: 0.2rem;
     }
 
     .space-y-1 > * + * {
-      margin-top: 0.125rem;
+      margin-top: 0.1rem;
+    }
+
+    .space-y-4 > * + * {
+      margin-top: 0.3rem;
     }
 
     /* Reduce header spacing */
     header {
-      padding-bottom: 0.5rem;
+      padding-bottom: 0.3rem;
+      margin-bottom: 0.3rem;
     }
 
     /* Compact text sizes for print */
-    .text-\[13px\] {
-      font-size: 11px;
+    .text-2xl,
+    .text-3xl {
+      font-size: 16px !important;
+      margin-bottom: 0.15rem !important;
     }
 
-    .text-\[12px\] {
+    .text-sm {
+      font-size: 10px;
+      margin-bottom: 0.15rem !important;
+    }
+
+    .text-\[13px\] {
       font-size: 10px;
     }
 
+    .text-\[12px\] {
+      font-size: 9.5px;
+    }
+
     .text-\[11px\] {
-      font-size: 9px;
+      font-size: 8.5px;
+    }
+
+    .text-\[10px\] {
+      font-size: 8px;
+    }
+
+    /* Remove excessive borders between experiences */
+    .border-t {
+      border-top-width: 0.5px;
+    }
+
+    /* Optimize line heights */
+    .font-bold,
+    .font-semibold {
+      line-height: 1.2;
+    }
+
+    /* Reduce gap between elements */
+    .gap-2 {
+      gap: 0.15rem;
     }
   }
 }
@@ -134,7 +196,7 @@
   }
 }
 
-/* Aliases práticos (opcional) */
+/* Practical aliases (optional) */
 .text-ink {
   color: var(--color-ink);
 }

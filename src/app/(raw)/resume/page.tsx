@@ -81,249 +81,183 @@ interface Skills {
   interests?: string[];
 }
 
+interface Publication {
+  title: string;
+  authors?: string;
+  venue?: string;
+  year?: string;
+  url?: string;
+  description?: string;
+}
+
 // --- DATA ---
 
 const personalInfo: PersonalInfo = {
-  name: "Ana Clara Rodrigues",
-  address: "Rua das Flores, 123, Apt 45",
+  name: "Thiago Henrique Menêses Bezerra",
+  address: "",
   city: "São Paulo",
-  state: "SP",
-  zip: "01234-567",
-  email: "ana.rodrigues@usp.br",
-  phone: "+55 (11) 98765-4321",
-  github: "github.com/anaclara-rodrigues",
-  linkedin: "linkedin.com/in/anaclararodrigues",
-  website: "anaclararodrigues.dev",
+  state: "São Paulo",
+  zip: "",
+  email: "bezerrathm@gmail.com",
+  phone: "",
+  github: "",
+  linkedin: "linkedin.com/in/thiag0bezerra",
+  website: "",
 };
 
 const educationData: Education[] = [
   {
-    institution: "Universidade de São Paulo (USP)",
-    location: "São Paulo, SP",
-    degree: "Bachelor of Science",
-    concentration: "Computer Science and Engineering",
-    gpa: "8.9/10.0",
-    graduationDate: "May 2024",
-    coursework:
-      "Algorithms and Data Structures, Machine Learning, Software Engineering, Database Systems, Computer Networks, Artificial Intelligence",
-    thesis:
-      "Deep Learning Applications in Medical Image Analysis: A Comparative Study of CNN Architectures",
-    honors: [
-      "Magna Cum Laude",
-      "Dean's List (6 semesters)",
-      "Outstanding Academic Achievement Award 2023",
-    ],
-    studyAbroad: {
-      program: "Computer Science Exchange Program",
-      location: "Madrid, Spain",
-      period: "January 2023 – June 2023",
-      coursework:
-        "Advanced Algorithms, Distributed Systems, European Tech Innovation",
-    },
+    institution: "Universidade Federal da Paraíba",
+    location: "Paraíba, Brazil",
+    degree: "Bachelor's Degree",
+    concentration: "Computer Science",
+    graduationDate: "2019",
     type: "university",
-  },
-  {
-    institution: "Colégio São Bento",
-    location: "São Paulo, SP",
-    graduationDate: "December 2019",
-    honors: [
-      "Valedictorian",
-      "National Mathematics Olympiad - Gold Medal",
-      "SAT Score: 1520/1600",
-    ],
-    type: "high-school",
   },
 ];
 
 const experiencesData: Experience[] = [
   {
-    organization: "Meta Brasil",
-    position: "Software Engineering Intern",
-    location: "São Paulo, SP",
-    period: "June 2023 – August 2023",
-    description:
-      "Developed and optimized React-based user interfaces for Meta's advertising platform, serving over 100,000 daily active users across Latin America. Collaborated with cross-functional teams to implement new features and improve system performance.",
+    organization: "Smart FlowAi",
+    position: "AI Software Engineer",
+    location: "Remote",
+    period: "June 2025 – Present",
     accomplishments: [
-      "Reduced page load times by 35% through implementation of advanced caching strategies and code splitting techniques",
-      "Built automated testing suite covering 90% of component functionality, reducing production bugs by 45%",
-      "Mentored 3 junior interns in React best practices and contributed to team knowledge-sharing sessions",
-      "Implemented accessibility features following WCAG 2.1 guidelines, improving platform usability for 15,000+ users with disabilities",
-    ],
-    link: "https://meta.com",
-    reference: {
-      id: "meta-internship",
-      url: "https://meta.com/careers/students-and-grads/",
-      title: "Meta Software Engineering Internship Program",
-      description: "Official Meta internship program page",
-    },
-  },
-  {
-    organization: "USP Institute for Advanced Studies",
-    position: "Research Assistant - AI Laboratory",
-    location: "São Paulo, SP",
-    period: "March 2022 – December 2022",
-    description:
-      "Conducted cutting-edge research in computer vision and deep learning applications for medical diagnosis under Dr. Maria Santos. Collaborated with Hospital das Clínicas to develop AI-powered diagnostic tools.",
-    accomplishments: [
-      "Co-authored 2 peer-reviewed papers published in IEEE conferences on medical image analysis",
-      "Developed convolutional neural network achieving 94.2% accuracy in early-stage tumor detection",
-      "Managed and preprocessed dataset of 50,000+ medical images using Python and TensorFlow",
-      "Presented research findings at 3 international conferences, receiving Best Student Paper Award at CBMS 2022",
-    ],
-    references: [
-      {
-        id: "usp-research",
-        url: "https://www5.usp.br/",
-        title: "University of São Paulo - Advanced Studies Institute",
-        description: "Research institution and academic programs",
-      },
-      {
-        id: "ieee-paper-1",
-        url: "https://ieeexplore.ieee.org/",
-        title:
-          "Deep Learning for Medical Image Segmentation: A Comparative Study",
-        description:
-          "IEEE Conference on Bioinformatics and Biomedicine (CBMS) 2022",
-      },
-      {
-        id: "ieee-paper-2",
-        url: "https://ieeexplore.ieee.org/",
-        title:
-          "CNN Architectures for Early-Stage Tumor Detection in Medical Imaging",
-        description:
-          "IEEE International Conference on Healthcare Informatics 2022",
-      },
+      "To address clinics' need for integrated management, developed a comprehensive CRM system to handle financial operations, patient records, and virtual assistant coordination, streamlining clinic workflows through a unified platform",
+      "Solved the challenge of slow initial patient contact by building a WhatsApp virtual agent management system that automates first-contact interactions, reducing human attendant workload and improving appointment scheduling success rates",
     ],
   },
   {
-    organization: "TechStart Accelerator",
-    position: "Full-Stack Developer",
-    location: "São Paulo, SP (Hybrid)",
-    period: "January 2021 – February 2022",
-    description:
-      "Led development of web applications for 8 early-stage startups in the accelerator program. Managed entire development lifecycle from conception to deployment, working directly with founders and stakeholders.",
+    organization: "B3",
+    position: "Research And Development Intern",
+    location: "Paraíba, Brazil",
+    period: "June 2024 – June 2025",
     accomplishments: [
-      "Built 12 responsive web applications using React, Node.js, and PostgreSQL, supporting over 25,000 combined users",
-      "Implemented e-commerce solutions that generated R$2.5 million in revenue for client startups",
-      "Designed and developed RESTful APIs handling 1 million+ requests per month with 99.9% uptime",
-      "Established development best practices and CI/CD pipelines, reducing deployment time by 60%",
+      "Addressed the challenge of manual testing bottlenecks by developing AI-driven software testing applications leveraging large language models to automate test-case generation, reducing manual testing effort and accelerating release cycles",
+      "Joined the financial market analysis team to tackle fraud detection challenges by implementing advanced data analysis techniques, enhancing detection accuracy and mitigating financial risks",
     ],
-    reference: {
-      id: "techstart-accelerator",
-      url: "https://techstart.com.br",
-      title: "TechStart Accelerator",
-      description: "Leading startup accelerator in Brazil",
-    },
+  },
+  {
+    organization: "PROCAD/CAPES – UFPB & UFF in partnership with the Federal Police",
+    position: "Machine Learning Engineer",
+    location: "Brazil",
+    period: "February 2024 – June 2025",
+    accomplishments: [
+      "To streamline forensic document analysis and reduce manual processing time, collaborated with academic and law-enforcement partners to develop Aavia®, a multi-stage tool for automating the separation and classification of forensic documents",
+      "Built an end-to-end document-processing pipeline including page segmentation, textual pre-processing (tokenization, lemmatization, stop-word removal), and category classification to enable efficient analysis of large document sets",
+      "Created feature-extraction workflows converting forensic texts into numeric representations, enabling rapid training and deployment of supervised learning models",
+      "Evaluated multiple supervised machine-learning algorithms for page-level classification, selecting the optimal approach based on robust performance metrics to maximize classification accuracy",
+      "Delivered a production-ready forensic analysis workflow that automatically generates tailored summaries for each document type, significantly improving processing efficiency",
+    ],
+  },
+  {
+    organization: "Freelance",
+    position: "Software Engineer",
+    location: "Remote",
+    period: "February 2014 – April 2025",
+    accomplishments: [
+      "Redesigned user interfaces for Pi-based embedded systems to improve usability, reducing response time and increasing user satisfaction in usability tests",
+      "To optimize compiler performance, developed an LLVM Pass for loop detection and optimization in Clang, accelerating code execution in critical benchmarks",
+      "Solved video streaming challenges in low-resource environments by architecting a distributed solution, minimizing latency and ensuring smooth playback despite unreliable networks",
+      "Modernized legacy codebases to address technical debt and security vulnerabilities, implementing CI/CD pipelines to reduce deployment friction and accelerate release cycles",
+      "Automated performance metric collection by creating specialized web crawlers for data extraction in low-level programming languages, streamlining analysis across multiple projects",
+      "Built resilient microservices with RESTful APIs designed to maintain robust service-to-service communication under high load conditions",
+      "Enhanced user experience by developing dynamic front-end applications, improving page-load performance and delivering responsive experiences across desktop and mobile platforms",
+    ],
+  },
+  {
+    organization: "Cinergy Tech",
+    position: "Co-Founder & Software Engineer",
+    location: "Brazil",
+    period: "October 2017 – March 2020",
+    description:
+      "Co-founded an energy technology startup to address the need for real-time electricity monitoring solutions. Led end-to-end development of an advanced embedded software system for real-time electricity-consumption monitoring, coordinating cross-functional teams and integrating cutting-edge technologies to help clients optimize energy usage, drive cost savings, and support sustainable practices.",
+  },
+  {
+    organization: "LASER-UFPB",
+    position: "Research And Development Scientist",
+    location: "Paraíba, Brazil",
+    period: "May 2013 – December 2017",
+    accomplishments: [
+      "Ensured timely project delivery by collaborating with academic researchers to plan and execute projects on schedule, coordinating resources and workflows",
+      "To improve tracking accuracy in dynamic environments, designed and implemented a real-time localization system using an Unscented Kalman Filter",
+      "Accelerated research iteration by developing a new platform for real-time simulation experiments, streamlining setup and data collection for rapid prototyping",
+      "Enabled reliable remote operations by engineering a low-latency remote control and localization solution for robotic systems, ensuring consistent performance across varied network conditions",
+    ],
   },
 ];
 
-const leadershipData: Activity[] = [
-  {
-    organization: "Google Developer Student Club - USP",
-    role: "President and Technical Lead",
-    location: "São Paulo, SP",
-    period: "August 2022 – May 2024",
-    description:
-      "Led the largest tech student organization at USP with 400+ active members. Organized technical workshops, hackathons, and industry networking events to bridge the gap between academia and industry.",
-    accomplishments: [
-      "Organized 25+ technical workshops reaching 2,000+ students in web development, mobile apps, and cloud computing",
-      "Led annual hackathon with 350 participants and R$50,000 in prizes, resulting in 5 startup launches",
-      "Established partnerships with Google, Microsoft, and AWS, securing R$100,000 in cloud credits for student projects",
-      "Created mentorship program pairing 150 underclassmen with industry professionals",
-    ],
-    reference: {
-      id: "gdsc-program",
-      url: "https://developers.google.com/community/gdsc",
-      title: "Google Developer Student Clubs Program",
-      description: "Official Google program for university students",
-    },
-  },
-  {
-    organization: "Women in Technology - USP Chapter",
-    role: "Vice President and Outreach Coordinator",
-    location: "São Paulo, SP",
-    period: "February 2021 – July 2023",
-    description:
-      "Promoted diversity and inclusion in STEM fields through educational initiatives and mentorship programs. Focused on increasing female representation in computer science and engineering programs.",
-    accomplishments: [
-      "Increased female enrollment in CS program by 40% through targeted outreach to high schools",
-      "Organized monthly industry panels featuring 50+ female tech leaders and entrepreneurs",
-      "Launched scholarship fund raising R$80,000 for underrepresented students in technology",
-      "Coordinated career fair connecting 200+ students with internship and job opportunities",
-    ],
-  },
-  {
-    organization: "IEEE Student Branch - USP",
-    role: "Secretary and Event Coordinator",
-    location: "São Paulo, SP",
-    period: "March 2020 – December 2021",
-    accomplishments: [
-      "Coordinated 15 technical seminars and conferences with 100+ attendees each",
-      "Managed chapter finances and increased membership by 85% during tenure",
-      "Organized study groups for IEEE certification exams with 95% pass rate",
-    ],
-  },
-];
+const leadershipData: Activity[] = [];
 
 const skillsData: Skills = {
   technical: [
     {
-      category: "Programming Languages",
-      skills: ["Python", "JavaScript/TypeScript", "Java", "C++"],
+      category: "Data Science & AI",
+      skills: ["TensorFlow", "Machine Learning", "Large Language Models", "Data Analysis"],
       level: "Advanced",
     },
     {
-      category: "Web Technologies",
-      skills: ["React", "Node.js", "HTML5/CSS3", "REST APIs"],
+      category: "Cloud Infrastructure",
+      skills: ["AWS", "Docker", "Kubernetes", "CI/CD", "Distributed Systems"],
       level: "Advanced",
     },
     {
-      category: "Data & AI",
-      skills: ["TensorFlow", "PyTorch", "Pandas", "SQL", "MongoDB"],
-      level: "Proficient",
+      category: "Programming Languages & Frameworks",
+      skills: ["Python", "JavaScript/TypeScript", "C++", "C#", "Ruby on Rails", "Django", "NestJS", "Next.js", "React", "ASP.NET"],
+      level: "Advanced",
     },
     {
-      category: "Cloud & DevOps",
-      skills: ["AWS", "Docker", "Git", "CI/CD", "Linux"],
-      level: "Proficient",
+      category: "Software Engineering",
+      skills: ["Agile", "Microservices", "RESTful APIs", "Embedded Systems", "Real-time Systems"],
+      level: "Advanced",
     },
   ],
   languages: [
-    { language: "Portuguese", fluency: "Native" },
-    { language: "English", fluency: "Advanced (C2)" },
-    { language: "Spanish", fluency: "Intermediate (B2)" },
-    { language: "German", fluency: "Basic (A2)" },
-  ],
-  laboratory: [
-    "PCR and gel electrophoresis",
-    "Cell culture techniques",
-    "Microscopy and imaging",
-    "Spectrophotometry",
-    "Data analysis software (R, SPSS)",
+    {
+      language: "Portuguese",
+      fluency: "Native",
+    },
+    {
+      language: "English",
+      fluency: "Advanced",
+    },
   ],
   interests: [
-    "Machine Learning research",
-    "Open source contributing",
-    "Rock climbing and hiking",
-    "Classical guitar",
-    "Travel photography",
-    "Sustainable technology",
+    "Artificial Intelligence research",
+    "Real-time systems",
+    "Compiler optimization",
+    "Security",
   ],
 };
+
+const publicationsData: Publication[] = [
+  {
+    title: "Integration of Robot Operating System and Ptolemy for Design of Real-time Multi-Robots Environments",
+  },
+];
 
 // --- COMPONENTS ---
 
 const Header: React.FC<PersonalInfo> = (props) => {
-  const fullAddress = `${props.address} • ${props.city}, ${props.state} ${props.zip}`;
+  const fullAddress = props.address
+    ? `${props.address} • ${props.city}, ${props.state}${props.zip ? ` ${props.zip}` : ""}`
+    : `${props.city}, ${props.state}`;
   return (
-    <header className="text-center pb-4 border-b border-gray-200">
-      <h1 className="text-2xl md:text-3xl font-bold mb-2">{props.name}</h1>
-      <div className="text-[12px] space-y-1">
-        <div>
-          {fullAddress} • {props.email}
-        </div>
+    <header className="text-center pb-3 border-b border-gray-200">
+      <h1 className="text-2xl md:text-3xl font-bold mb-1">{props.name}</h1>
+      <p className="text-sm text-gray-700 mb-1">
+        Senior Software Engineer | Full-Stack Developer | AI Researcher
+      </p>
+      <div className="text-[12px] space-y-0.5">
+        <div>{props.email}</div>
         <div className="flex justify-center items-center space-x-4">
-          <span>{props.phone}</span>
+          {fullAddress && <span>{fullAddress}</span>}
+          {props.phone && (
+            <>
+              {fullAddress && <span>•</span>}
+              <span>{props.phone}</span>
+            </>
+          )}
           {props.github && (
             <>
               <span>•</span>
@@ -351,12 +285,12 @@ const Header: React.FC<PersonalInfo> = (props) => {
 const EducationSection: React.FC<{ education: Education[] }> = ({
   education,
 }) => (
-  <section className="mt-6 avoid-break">
+  <section className="mt-4 avoid-break">
     <h2 className="section-title">Education</h2>
     {education.map((edu, index) => (
       <div
         key={`${edu.institution}-${edu.graduationDate}`}
-        className={index > 0 ? "mt-4" : "mt-2"}
+        className={index > 0 ? "mt-3" : "mt-1"}
       >
         <div className="flex justify-between items-start">
           <div className="flex-1">
@@ -431,14 +365,14 @@ const ExperienceSection: React.FC<{
   experiences: Experience[];
   getRefIndex: (refId: string) => number;
 }> = ({ experiences, getRefIndex }) => (
-  <section className="mt-6 avoid-break">
+  <section className="mt-4 avoid-break">
     <h2 className="section-title">Experience</h2>
     {experiences.map((exp, index) => (
       <div
         key={`${exp.organization}-${exp.position}-${exp.period}`}
-        className={index > 0 ? "mt-5 border-t pt-4 border-gray-200" : "mt-2"}
+        className={index > 0 ? "mt-4 border-t pt-3 border-gray-200" : "mt-1"}
       >
-        <div className="flex justify-between items-start mb-2">
+        <div className="flex justify-between items-start mb-1">
           <div className="flex-1">
             <div className="font-bold">
               {exp.link ? (
@@ -468,12 +402,12 @@ const ExperienceSection: React.FC<{
           </div>
         </div>
         {exp.description && (
-          <div className="text-[12px] mt-2">
+          <div className="text-[12px] mt-1">
             <p>{exp.description}</p>
           </div>
         )}
         {exp.accomplishments && exp.accomplishments.length > 0 && (
-          <div className="text-[12px] mt-2">
+          <div className="text-[12px] mt-1">
             {exp.accomplishments.map((item, itemIndex) => {
               const accomplishmentRefs = exp.references || [];
               const ref = accomplishmentRefs.find(
@@ -482,7 +416,7 @@ const ExperienceSection: React.FC<{
                   r.id.startsWith("ieee-paper"),
               );
               return (
-                <div key={item} className={itemIndex > 0 ? "mt-1" : ""}>
+                <div key={item} className={itemIndex > 0 ? "mt-0.5" : ""}>
                   • {item}
                   {ref && (
                     <Citation refId={ref.id} refIndex={getRefIndex(ref.id)} />
@@ -501,14 +435,14 @@ const LeadershipSection: React.FC<{
   activities: Activity[];
   getRefIndex: (refId: string) => number;
 }> = ({ activities, getRefIndex }) => (
-  <section className="mt-6 avoid-break">
+  <section className="mt-4 avoid-break">
     <h2 className="section-title">Leadership & Activities</h2>
     {activities.map((activity, index) => (
       <div
         key={`${activity.organization}-${activity.role}-${activity.period}`}
-        className={index > 0 ? "mt-4 border-t pt-4 border-gray-200" : "mt-2"}
+        className={index > 0 ? "mt-3 border-t pt-3 border-gray-200" : "mt-1"}
       >
-        <div className="flex justify-between items-start mb-2">
+        <div className="flex justify-between items-start mb-1">
           <div className="flex-1">
             <div className="font-bold">
               {activity.organization}
@@ -548,23 +482,22 @@ const LeadershipSection: React.FC<{
 );
 
 const SkillsSection: React.FC<{ skills: Skills }> = ({ skills }) => (
-  <section className="mt-6 avoid-break">
+  <section className="mt-4 avoid-break">
     <h2 className="section-title">Skills & Interests</h2>
-    <div className="text-[12px] mt-2 space-y-2">
+    <div className="text-[12px] mt-1 space-y-1">
       {skills.technical && skills.technical.length > 0 && (
-        <div>
-          <span className="font-semibold">Technical:</span>
+        <>
           {skills.technical.map((tech, index) => (
-            <span key={tech.category}>
-              {index > 0 && "; "} {tech.category}: {tech.skills.join(", ")} (
-              {tech.level})
-            </span>
+            <div key={tech.category}>
+              <span className="font-semibold">{tech.category}:</span>{" "}
+              {tech.skills.join(", ")}
+            </div>
           ))}
-        </div>
+        </>
       )}
       {skills.languages && skills.languages.length > 0 && (
         <div>
-          <span className="font-semibold">Language:</span>
+          <span className="font-semibold">Languages:</span>{" "}
           {skills.languages.map((lang, index) => (
             <span key={lang.language}>
               {index > 0 && ", "}
@@ -585,6 +518,44 @@ const SkillsSection: React.FC<{ skills: Skills }> = ({ skills }) => (
           {skills.interests.join(", ")}
         </div>
       )}
+    </div>
+  </section>
+);
+
+const PublicationsSection: React.FC<{ publications: Publication[] }> = ({
+  publications,
+}) => (
+  <section className="mt-4 avoid-break">
+    <h2 className="section-title">Publications</h2>
+    <div className="text-[12px] mt-1 space-y-1">
+      {publications.map((pub, index) => (
+        <div key={`${pub.title}-${index}`}>
+          {pub.url ? (
+            <a
+              href={pub.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-ink hover:text-gray-600"
+            >
+              {pub.title}
+            </a>
+          ) : (
+            <span>{pub.title}</span>
+          )}
+          {pub.authors && (
+            <div className="text-gray-600 mt-1">{pub.authors}</div>
+          )}
+          {pub.venue && (
+            <div className="italic mt-1">
+              {pub.venue}
+              {pub.year && `, ${pub.year}`}
+            </div>
+          )}
+          {pub.description && (
+            <div className="text-gray-600 mt-1">{pub.description}</div>
+          )}
+        </div>
+      ))}
     </div>
   </section>
 );
@@ -625,14 +596,14 @@ const ReferenceSystem: React.FC<{ references: Reference[] }> = ({
   }, []);
 
   return (
-    <section className="mt-6 avoid-break">
+    <section className="mt-4 avoid-break">
       <h2 className="section-title">References</h2>
-      <div className="text-[12px] mt-2 space-y-2">
+      <div className="text-[12px] mt-1 space-y-1">
         {references.map((ref, index) => (
           <div key={ref.id} className="flex items-start gap-2">
             <span
               id={`ref-${ref.id}`}
-              className="font-bold text-[10px] min-w-[20px]"
+              className="font-bold text-[10px] min-w-5"
             >
               [{index + 1}]
             </span>
@@ -685,11 +656,16 @@ export default function ResumePage() {
         experiences={experiencesData}
         getRefIndex={getRefIndex}
       />
-      <LeadershipSection
-        activities={leadershipData}
-        getRefIndex={getRefIndex}
-      />
+      {leadershipData.length > 0 && (
+        <LeadershipSection
+          activities={leadershipData}
+          getRefIndex={getRefIndex}
+        />
+      )}
       <SkillsSection skills={skillsData} />
+      {publicationsData.length > 0 && (
+        <PublicationsSection publications={publicationsData} />
+      )}
       {uniqueReferences.length > 0 && (
         <ReferenceSystem references={uniqueReferences} />
       )}

@@ -1,25 +1,25 @@
 import type { Metadata } from "next";
 import "./resume.css";
 export const metadata: Metadata = {
-  title: "Thiago Bezerra - Portfólio",
+  title: "Thiago Bezerra - Portfolio",
   description:
-    "Portfólio pessoal de Thiago Bezerra - Senior Software Engineer | Full-Stack Developer | AI Researcher",
+    "Personal Portfolio of Thiago Bezerra - Senior Software Engineer | Full-Stack Developer | AI Researcher",
   keywords: [
     "Thiago Bezerra",
     "Software Engineer",
     "Full Stack",
     "AI Researcher",
-    "Ciência de dados",
-    "Infraestrutura de nuvem",
+    "Data Science",
+    "Cloud Infrastructure",
     "TensorFlow",
   ],
   authors: [{ name: "Thiago Bezerra" }],
   openGraph: {
-    title: "Thiago Bezerra - Portfólio",
+    title: "Thiago Bezerra - Portfolio",
     description:
-      "Portfólio pessoal de Thiago Bezerra - Senior Software Engineer | Full-Stack Developer | AI Researcher",
+      "Personal Portfolio of Thiago Bezerra - Senior Software Engineer | Full-Stack Developer | AI Researcher",
     type: "website",
-    locale: "pt_BR",
+    locale: "en_US",
   },
 };
 

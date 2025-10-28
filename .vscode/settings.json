@@ -94,9 +94,7 @@
     ".vscode/copilot/prompts": true
   },
   "chat.sendElementsToChat.enabled": true,
-  "chat.todoListTool.enabled": true,
   "chat.tools.terminal.enableAutoApprove": true,
-  "chat.useFileStorage": true,
   "github.copilot.advanced": {
     "useLanguageServer": true
   },
