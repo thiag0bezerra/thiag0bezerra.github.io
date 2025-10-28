@@ -109,6 +109,14 @@ const educationData: Education[] = [
   {
     institution: "Universidade Federal da Paraíba",
     location: "Paraíba, Brazil",
+    degree: "Master's Degree",
+    concentration: "Computer Science",
+    graduationDate: "August 2025 – Present",
+    type: "university",
+  },
+  {
+    institution: "Universidade Federal da Paraíba",
+    location: "Paraíba, Brazil",
     degree: "Bachelor's Degree",
     concentration: "Computer Science",
     graduationDate: "2019",
@@ -270,7 +278,7 @@ const Header: React.FC<PersonalInfo> = (props) => {
     <header className="text-center pb-3 border-b border-gray-200">
       <h1 className="text-2xl md:text-3xl font-bold mb-1">{props.name}</h1>
       <p className="text-sm text-gray-700 mb-1">
-        Senior Software Engineer | Full-Stack Developer | AI Researcher
+        Software Engineer | AI Researcher
       </p>
       <div className="text-[12px] space-y-0.5">
         <div>{props.email}</div>
@@ -318,19 +326,17 @@ const EducationSection: React.FC<{ education: Education[] }> = ({
       >
         <div className="flex justify-between items-start">
           <div className="flex-1">
-            <div className="font-bold">{edu.institution}</div>
-            {(edu.degree || edu.concentration || edu.gpa) && (
-              <div className="text-[12px] mt-1">
-                {edu.degree && <span>{edu.degree}</span>}
-                {edu.concentration && (
-                  <span>
-                    {edu.degree ? ", " : ""}
-                    {edu.concentration}
-                  </span>
-                )}
-                {edu.gpa && <span>. GPA {edu.gpa}</span>}
-              </div>
-            )}
+            <div className="font-bold">
+              {edu.degree && <span>{edu.degree}</span>}
+              {edu.concentration && (
+                <span>
+                  {edu.degree ? ", " : ""}
+                  {edu.concentration}
+                </span>
+              )}
+              {edu.gpa && <span>. GPA {edu.gpa}</span>}
+            </div>
+            <div className="text-[12px] mt-1">{edu.institution}</div>
             {(edu.coursework || edu.thesis) && (
               <div className="text-[12px] mt-1">
                 {edu.coursework && (
